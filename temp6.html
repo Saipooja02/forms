@@ -23,7 +23,8 @@
         justify-content: space-between;
       }
       .row {
-        background-color: rgb(34, 36, 12);
+        background-color: rgb(232, 237, 193);
+        background-image: url();
         padding: 80px;
         display: flex;
         justify-content: space-around;
@@ -33,11 +34,18 @@
       .box {
         /* background-color: teal; */
         margin: 20px;
-        padding: 20px;
-        width: 300px;
-        border: 5px solid white;
+        padding: 80px;
+        width: 500px;
+        border: 2px solid rgb(25, 10, 10);
         border-radius: 30px;
-        background: linear-gradient(rgb(243, 116, 100), rgb(225, 213, 82));
+        background: linear-gradient(rgb(221, 237, 134), rgb(152, 232, 152),rgb(237, 171, 233));
+        box-shadow: 5px 5px 4px 5px grey;
+        transition-property: transform;
+        transition-duration: 0.2s;
+
+      }
+      .box:hover{
+        transform: scale(1.5,1.5);
       }
 
       .container {
@@ -51,12 +59,12 @@
         height: 100%;
       }
       p {
-        font-size: 12px;
+        font-size: 15px;
         font-family: "verdana";
         font-weight: bold;
       }
       .header {
-        background-image: url("assets/images/meeting.jpg");
+        background-image: url("assets/images/meeting3.jpg");
         background-size: cover;
         justify-content: center;
         align-items: end;
@@ -65,7 +73,37 @@
         background-color: red;
         padding: 20px;
         opacity: 0.4;
+      
         color: white;
+      }
+      ul{
+        margin: 0px;
+        padding: 0px;
+      }
+      li{
+        display:inline-block;
+        padding: 5px;
+        font-size: larger;
+      }
+      .menu{
+        margin: 0%;
+
+      }
+      .submenu{
+        display: none;
+        position: absolute;
+        background-color: rgb(214, 244, 244);
+        height: 100px;
+       
+      }
+      .menu:hover .submenu{
+        display:block
+
+      }
+      .service-box{
+        background-color: aqua;
+        position: absolute;
+        display: none;
       }
     </style>
   </head>
@@ -79,11 +117,19 @@
     <div id="h">
       <h3>My Application</h3>
       <div>
-        <a href="#home">Home</a>
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="menu">
         <a href="#projects">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="submenu">
+          <a href="#">Project 1</a><br>
+          <a href="#">Project 2</a><br>
+        </div>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#servics">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
     <div class="row header" id="home">
@@ -96,12 +142,12 @@
       <div class="box">
         <h2>Project 1</h2>
         <p>This is my project 1</p>
-        <a href="#">View Project</a>
+        <a href="#" style="color: black;">View Project</a>
       </div>
       <div class="box">
         <h2>Project 2</h2>
         <p>This is my project 2</p>
-        <a href="#">View Project</a>
+        <a href="#" style="color: black;">View Project</a>
       </div>
       <div class="box">
         <h2>Project 3</h2>
@@ -109,8 +155,18 @@
         <a href="#">View Project</a>
       </div>
     </div>
+
     <div>
       <h3>@Copyright 2024. All rights reserved.</h3>
+    </div>
+    <div class="service-box">
+      <h2>Service</h2>
+      <ol>
+        <li>
+          Frontend Development
+          Backend Development
+        </li>
+      </ol>
     </div>
   </div>
   </body>
