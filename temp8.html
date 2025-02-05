@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let users=[]
         function showdata()
         {
             //lert("Hello world")
@@ -13,7 +14,15 @@
             let password=document.getElementById("password").value
             let dob=document.getElementById("dob").value
             //data.innerHTML=name + "<br>" + email+" <br> "+password+" <br> "+dob
-            data.innerHTML=`${name}<br> ${email}<br> ${password}<br>${dob}`
+           // data.innerHTML=`${name}<br> ${email}<br> ${password}<br>${dob}`
+           let user={
+            name:name,
+            email:email,
+            password:password,
+            dob:dob
+           }
+           users.push(user)
+           console.log(users)
         }
     </script>
 </head>
