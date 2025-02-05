@@ -7,7 +7,13 @@
     <script>
         function showdata()
         {
-            alert("Hello world")
+            //lert("Hello world")
+            let name=document.getElementById("name").value
+            let email=document.getElementById("email").value
+            let password=document.getElementById("password").value
+            let dob=document.getElementById("dob").value
+            //data.innerHTML=name + "<br>" + email+" <br> "+password+" <br> "+dob
+            data.innerHTML=`${name}<br> ${email}<br> ${password}<br>${dob}`
         }
     </script>
 </head>
@@ -15,7 +21,7 @@
     <h1>New User Registration Form</h1>
     <p><input type="text" id="name"placeholder="Enter Name"></p>
     <p><input type="text" id="email"placeholder="Enter Email Address"></p>
-    <p><input type="text"id="password"placeholder="Emter password"></p>
+    <p><input type="password"id="password"placeholder="Enter password"></p>
     <p><input type="datetime-local" id="dob"></p>
     <button onclick="showdata()">Register</button>
     <hr/>
