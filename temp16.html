@@ -6,13 +6,15 @@
     <title>Document</title>
 
 <script>
+    let users=[];
     function showLogin(){
         let str=`
         <div>
-            <h1>Login Form</h2>
-                <p><input type="text"></p>
-                <p><input type="password"></p>
-                <button>Log In</button><br><br>
+            <h1>Login Form</h1>
+                <div id='msg'></div>
+                <p><input type="email" id="email" placeholder="Email"></p>
+                <p><input type="password" id="password" placeholder="Password"></p>
+                <button onclick="showData()">Log In</button><br><br>
                 <button onclick="showRegister()">Create Account</button>
             </div>
         `
@@ -22,17 +24,54 @@
     function showRegister() {
         let str = `
             <h1>Registration Form</h1>
-            <p><input type="text" placeholder="Full Name"></p>
-            <p><input type="email" placeholder="Email"></p>
-            <p><input type="text" placeholder="Username"></p>
-            <p><input type="password" placeholder="Password"></p>
-            <p><input type="password" placeholder="Confirm Password"></p>
-            <button>Register</button><br><br>
+            <p><input type="text" id="name" placeholder="Full Name"></p>
+            <p><input type="email"id="email" placeholder="Email"></p>
+            <p><input type="password" id="password" placeholder="Password"></p>
+            <p><input type="date" id="dob" placeholder="dob"></p>
+            <button onclick="addUser()">Register</button><br><br>
             <button onclick="showLogin()">Back to Login</button>
         `
         root.innerHTML = str;
     }
+    function showData(){
+        let email=document.getElementById("email").value
+        let password=document.getElementById("password").value
+        for(let i=0;i<users.length;i++){
+            if(users[i].email==email&&users[i].password==password){
+             home() ;
+             break;  
+            }else{
+                msg.innerHTML="Access Denied"
+            }
+
+        }
+    }
     
+    function addUser(){
+        
+        let name=document.getElementById("name").value
+        let email=document.getElementById("email").value
+        let password=document.getElementById("password").value
+        let dob=document.getElementById("dob").value
+        let user={
+            name:name,
+            email:email,
+            password:password,
+            dob:dob
+        };
+        users.push(user)
+            showLogin();
+    }
+    function home()
+    {
+        let str=`
+        <p> Welcome</p>
+        <button onclick="showLogin()">Log Out</button>
+        
+        
+`
+        root.innerHTML=str;
+    }
 </script>
 </head>
 <body onload="showLogin()">
